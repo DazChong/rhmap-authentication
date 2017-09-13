@@ -30,9 +30,7 @@ module.exports = function (auth, spec) {
                     return next();
                 } else {
                     return response.status(service_res.statusCode).send(body);
-                }
-                
-                
+                }  
             }
         });
     }

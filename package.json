@@ -1,7 +1,7 @@
 {
-  "name": "rhmap-auth-ldap",
-  "version": "1.0.2",
-  "description": "rhmap module to check the LDAP auth",
+  "name": "rhmap-authentication",
+  "version": "1.0.0",
+  "description": "rhmap module to check the LDAP and SAML Auth",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
