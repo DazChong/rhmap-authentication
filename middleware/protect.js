@@ -12,8 +12,8 @@ module.exports = function (auth, spec) {
             }
         }
         fh.service({
-            "guid": auth.LDAPAuthProjId,
-            "path": "/ldap/auth",
+            "guid": auth.AuthProjId,
+            "path": "/session/valid",
             "method": "POST",
             "params": params,
             "headers": {

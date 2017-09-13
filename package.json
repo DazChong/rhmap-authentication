@@ -8,20 +8,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/misanche/rhmap-auth-ldap.git"
+    "url": "git+https://github.com/misanche/rhmap-authentication.git"
   },
   "keywords": [
     "ldap",
+    "saml",
     "rhmap",
     "node",
-    "auth"
+    "auth",
+    "authentication"
   ],
   "author": "Mikel Sanchez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/misanche/rhmap-auth-ldap/issues"
+    "url": "https://github.com/misanche/rhmap-authentication/issues"
   },
-  "homepage": "https://github.com/misanche/rhmap-auth-ldap#readme",
+  "homepage": "https://github.com/misanche/rhmap-authentication#readme",
   "dependencies": {
     "fh-mbaas-api": "^7.0.14"
   }

@@ -3,25 +3,25 @@ var Protect = require("./middleware/protect");
 /**
  * Instantiate a Auth.
  *
- * The `LDAPAuthProjId` is required.
+ * The `AuthProjId` is required.
  *
- * The `LDAPAuthProjId` is the ID of the MBaaS LDAP created in your
+ * The `AuthProjId` is the ID of the MBaaS LDAP or SAML LDAP created in your
  * RHMAP Studio, this is required to call it and check if the user has 
  * the rights to access a protected resource.
  *
  * @constructor
  *
- * @param      {String}    LDAPAuthProjId          LDAP Auth Project ID
+ * @param      {String}    AuthProjId          Auth Project ID
  *
  * @return     {Auth}  A constructed Auth object.
  *
  */
-function Auth (LDAPAuthProjId) {
+function Auth (AuthProjId) {
 
-    if (!LDAPAuthProjId ) {
-    throw new Error('LDAPAuthProjId must be set up');
+    if (!AuthProjId ) {
+    throw new Error('AuthProjId must be set up');
   }
-  this.LDAPAuthProjId = LDAPAuthProjId;
+  this.AuthProjId = AuthProjId;
 }
 
 /**
@@ -45,7 +45,7 @@ function Auth (LDAPAuthProjId) {
  * Example
  *
  *     // Users must have the `AC` role within this application
- *     app.get( '/AC/:page', keycloak.protect( 'AC' ), myACHandler );
+ *     app.get( '/AC/:page', keycloak.protect({'groups':['AC']}), myACHandler );
  *
  * With no role, simple authentication is all that is required:
  *
