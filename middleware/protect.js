@@ -8,7 +8,7 @@ module.exports = function (auth, spec, type) {
         if (type == undefined || type != auth.JWT) {
             params.type = auth.BASIC;
         }else {
-            params.type == type;
+            params.type = type;
         }
         if (spec != undefined) {
             if (spec.groups) {
