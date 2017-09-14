@@ -22,6 +22,8 @@ function Auth (AuthProjId) {
     throw new Error('AuthProjId must be set up');
   }
   this.AuthProjId = AuthProjId;
+  this.JWT = 'JWT';
+  this.BASIC + 'BASIC';
 }
 
 /**

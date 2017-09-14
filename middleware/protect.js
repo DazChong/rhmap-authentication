@@ -1,9 +1,12 @@
 var fh = require("fh-mbaas-api");
 
-module.exports = function (auth, spec) {
+module.exports = function (auth, spec, type) {
 
     return function protect (request, response, next) {
-        var params = {
+        var params = {  
+        }
+        if (type != undefined) {
+            params.type = auth.BASIC;
         }
         if (spec != undefined) {
             if (spec.groups) {
@@ -25,9 +28,11 @@ module.exports = function (auth, spec) {
                 return err;
             } else {
                 if (service_res.statusCode == 200) {
-                    var authorization = service_res.headers.authorization;
-                    if (authorization != undefined) {
-                        request.headers.authorization = authorization;
+                    if(type != undefined && type == auth.JWT){
+                        var authorization = service_res.headers.authorization;
+                        if (authorization != undefined) {
+                            request.headers.authorization = authorization;
+                        }
                     }
                     return next();
                 } else {
