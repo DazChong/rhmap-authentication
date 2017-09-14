@@ -1,6 +1,6 @@
 {
   "name": "rhmap-authentication",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "rhmap module to check the LDAP and SAML Auth",
   "main": "index.js",
   "scripts": {
