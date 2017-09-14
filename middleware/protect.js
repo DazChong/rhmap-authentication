@@ -3,7 +3,6 @@ var fh = require("fh-mbaas-api");
 module.exports = function (auth, spec) {
 
     return function protect (request, response, next) {
-        console.log("Protect with spec:",spec);
         var params = {
         }
         if (spec != undefined) {
@@ -25,8 +24,11 @@ module.exports = function (auth, spec) {
                 console.log('Service call failed: ', err);
                 return err;
             } else {
-                console.log('response auth ok', body);
                 if (service_res.statusCode == 200) {
+                    var authorization = service_res.headers.authorization;
+                    if (authorization != undefined) {
+                        request.headers.authorization = authorization;
+                    }
                     return next();
                 } else {
                     return response.status(service_res.statusCode).send(body);
