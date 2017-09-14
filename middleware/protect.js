@@ -5,8 +5,10 @@ module.exports = function (auth, spec, type) {
     return function protect (request, response, next) {
         var params = {  
         }
-        if (type != undefined) {
+        if (type == undefined || type != auth.JWT) {
             params.type = auth.BASIC;
+        }else {
+            params.type == type;
         }
         if (spec != undefined) {
             if (spec.groups) {
@@ -25,7 +27,7 @@ module.exports = function (auth, spec, type) {
             if (err) {
                 // An error occurred
                 console.log('Service call failed: ', err);
-                return err;
+                return next(err);
             } else {
                 if (service_res.statusCode == 200) {
                     if(type != undefined && type == auth.JWT){

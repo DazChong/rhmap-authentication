@@ -23,7 +23,7 @@ function Auth (AuthProjId) {
   }
   this.AuthProjId = AuthProjId;
   this.JWT = 'JWT';
-  this.BASIC + 'BASIC';
+  this.BASIC = 'BASIC';
 }
 
 /**
@@ -55,7 +55,7 @@ function Auth (AuthProjId) {
  *
  * @param {String} role The role of the app to check if the user has the rights to call to that service
  */
-Auth.prototype.protect = function (spec) {
-  return Protect(this, spec);
+Auth.prototype.protect = function (spec, type) {
+  return Protect(this, spec, type);
 };
 module.exports = Auth;
