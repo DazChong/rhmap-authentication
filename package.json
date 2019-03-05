@@ -1,6 +1,6 @@
 {
   "name": "rhmap-authentication",
-  "version": "1.0.4",
+  "version": "1.1.1",
   "description": "rhmap module to check the LDAP and SAML Auth",
   "main": "index.js",
   "scripts": {
@@ -8,23 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/misanche/rhmap-authentication.git"
+    "url": "http://tfs.bpweb.bp.com:8080/tfs/Oil/Mobile/_git/npm-rhmap-authentication"
   },
   "keywords": [
-    "ldap",
-    "saml",
     "rhmap",
+    "saml",
+    "ldap",
     "node",
     "auth",
     "authentication"
   ],
   "author": "Mikel Sanchez",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/misanche/rhmap-authentication/issues"
-  },
-  "homepage": "https://github.com/misanche/rhmap-authentication#readme",
   "dependencies": {
-    "fh-mbaas-api": "^7.0.14"
+    "fh-mbaas-api": "9.1.4"
   }
 }

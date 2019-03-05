@@ -30,10 +30,14 @@ module.exports = function (auth, spec, type) {
                 return next(err);
             } else {
                 if (service_res.statusCode == 200) {
+                    console.log('type: ', type);
+                    console.log('auth.jwt: ', auth.JWT);
                     if(type != undefined && type == auth.JWT){
                         var authorization = service_res.headers.authorization;
+                        console.log("service_res.headers.authorization",service_res.headers.authorization);
                         if (authorization != undefined) {
                             request.headers.authorization = authorization;
+                            console.log('AUTH header: ', request.headers);
                         }
                     }
                     return next();
